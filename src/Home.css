@@ -74,16 +74,6 @@
   transform: scale(1.05);
 }
 
-/* Location globe animation */
-@keyframes rotateGlobe {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 /* Services section */
 .services {
   display: flex;
@@ -152,9 +142,10 @@ html {
 
   /* Adjust image size for smaller screens */
   .portfolio-image {
-    width: 80%;
+    width: 100%;
     height: auto;
-    top: 10%;
+    top: 0; /* Keep it positioned at the top */
+    transform: translateX(0); /* Remove centering on small screens */
   }
 
   /* Make the location button a smaller circle and center it */
@@ -202,6 +193,11 @@ html {
   .tagline {
     font-size: 1.2rem;
   }
+
+  /* Ensure the scrolling text is still visible */
+  .scrolling-text {
+    font-size: 40px; /* Smaller font size for mobile screens */
+  }
 }
 
 /* Tablet - 768px to 1024px */
@@ -215,7 +211,7 @@ html {
 
   /* Adjust image for tablet */
   .portfolio-image {
-    width: 70%;
+    width: 80%;
     height: auto;
     top: 10%;
   }

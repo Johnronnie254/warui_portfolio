@@ -1,9 +1,14 @@
-/* Navbar container - ensure full-width */
+/* Navbar container - ensure full-width and fixed at the top */
 .navbar-container {
   display: flex;
   justify-content: space-between; /* Ensures the logo is on the left and links on the right */
   padding: 0.5rem 2rem; /* Padding for spacing */
-  align-items: center;
+  position: fixed; /* Fix the navbar to the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure navbar stays above all other content */
+  background-color: rgba(0, 0, 0, 0.7); /* Optional: Add a semi-transparent background */
 }
 
 /* Logo styles */
@@ -28,9 +33,11 @@
   width: 100%;
 }
 
+/* Individual nav link styling */
 .navbar-nav .nav-link {
   color: white;
   padding: 10px 20px;  /* Adds space around each link */
+  text-decoration: none;
 }
 
 /* Nav link hover styles */
@@ -38,43 +45,44 @@
   color: #ccc;  /* Lighter color on hover */
 }
 
-/* Responsive adjustments for smaller screens (mobile) */
+/* Ensure that homepage content is visible even when navbar is fixed */
+.homepage-content {
+  margin-top: 80px; /* Ensure content is not hidden under the fixed navbar */
+  padding: 20px;
+}
+
+/* Adjust navbar layout for mobile (screen width <= 768px) */
 @media (max-width: 768px) {
   /* Navbar container adjustments */
   .navbar-container {
-    flex-direction: column; /* Stack items vertically on smaller screens */
-    align-items: center;  /* Center items horizontally */
-    padding: 1rem; /* Add more padding for better spacing */
-  }
-
-  /* Adjust logo size on mobile */
-  .logo {
-    font-size: 1.2rem; /* Smaller font size */
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
   }
 
   /* Hide nav links initially on small screens */
   .nav-links {
-    display: none; /* Hide links by default */
+    display: none;
     width: 100%;
-    flex-direction: column; /* Stack links vertically when shown */
-    text-align: center;  /* Center align links */
+    flex-direction: column;
+    text-align: center;
     margin-top: 10px;
   }
 
   /* Show nav links when hamburger menu is active */
   .nav-links.show {
-    display: flex; /* Show links when toggled */
+    display: flex;
   }
 
-  /* Style for nav links */
+  /* Navbar link adjustments */
   .navbar-nav .nav-link {
-    padding: 10px; /* Reduced padding for mobile */
-    font-size: 1.2rem;  /* Adjust font size */
+    padding: 10px;
+    font-size: 1.2rem;
   }
 
-  /* Hamburger menu button */
+  /* Hamburger button visibility */
   .hamburger {
-    display: block; /* Show hamburger menu on small screens */
+    display: block;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -90,7 +98,7 @@
     transition: all 0.3s ease;
   }
 
-  /* Navbar toggle functionality when clicked */
+  /* Toggle hamburger to 'X' on click */
   .hamburger.active div:nth-child(1) {
     transform: rotate(45deg);
     transform-origin: 5px 5px;
