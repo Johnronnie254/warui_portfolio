@@ -1,13 +1,34 @@
 import React from 'react';
 import { FaEnvelope, FaPhoneAlt, FaInstagram, FaVimeo, FaImdb } from 'react-icons/fa'; // For icons
 import './Contact.css'; 
-import CustomNavbar from './Navbar';
+import { Row, Col, Button } from "react-bootstrap";
+
 
 const Contact = () => {
   return (
     <div className="contact-container">
-      {/* Navbar Section */}
-      <CustomNavbar />
+     {/* Get in Touch Section */}
+      <Row className="text-center my-5">
+        <Col>
+          <div className="rotating-get-in-touch">
+            <p>Get in Touch</p>
+          </div>
+          <div className="contact-buttons my-3">
+            <Button
+              variant="outline-light"
+              onClick={() => window.open("tel:+254720062393")}
+            >
+              +254720062393
+            </Button>{" "}
+            <Button
+              variant="outline-light"
+              onClick={() => window.open("mailto:waruifred@gmail.com")}
+            >
+              waruifred@gmail.com
+            </Button>
+          </div>
+        </Col>
+      </Row>
      
       {/* Welcome Text */}
       <div className="welcome-text">

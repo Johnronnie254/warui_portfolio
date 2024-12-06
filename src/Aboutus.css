@@ -183,24 +183,6 @@
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* Get in Touch Section */
-.rotating-get-in-touch {
-  width: 120px;
-  height: 120px;
-  background-color: blue;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: rotate 3s linear infinite;
-  margin: 20px auto;
-}
-
-.contact-buttons button {
-  margin: 10px;
-  padding: 10px 20px;
-}
 
 /* Social Links Section */
 .social-links {

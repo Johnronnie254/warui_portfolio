@@ -1,7 +1,7 @@
 import React from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Card} from "react-bootstrap";
 import "./Aboutus.css";
-import CustomNavbar from "./Navbar";
+
 
 const AboutUs = () => {
   // Dynamic services array
@@ -30,8 +30,7 @@ const AboutUs = () => {
 
   return (
     <Container fluid className="aboutus-container">
-        {/* Navbar Section */}
-      <CustomNavbar />
+    
       {/* Header Section */}
       <Row className="text-center">
         <Col>
@@ -114,28 +113,7 @@ const AboutUs = () => {
         ))}
       </Row>
 
-      {/* Get in Touch Section */}
-      <Row className="text-center my-5">
-        <Col>
-          <div className="rotating-get-in-touch">
-            <p>Get in Touch</p>
-          </div>
-          <div className="contact-buttons my-3">
-            <Button
-              variant="outline-light"
-              onClick={() => window.open("tel:+254720062393")}
-            >
-              +254720062393
-            </Button>{" "}
-            <Button
-              variant="outline-light"
-              onClick={() => window.open("mailto:waruifred@gmail.com")}
-            >
-              waruifred@gmail.com
-            </Button>
-          </div>
-        </Col>
-      </Row>
+      
 
       {/* Social Links Section */}
       <Row>

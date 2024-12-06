@@ -1,247 +1,131 @@
-/* Home page background */
-.home {
-  background-color: black;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  position: relative;
-  overflow: hidden;
-  padding-top: 15px;
-}
-
-/* Image styling */
-.portfolio-image {
-  width: 300px;
-  height: 100vh;
-  object-fit: cover;
-  position: absolute;
+/* Loading Screen */
+.loading-screen {
+  position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-/* Scrolling text at the bottom */
-.scrolling-text-container {
-  position: absolute;
-  bottom: 15px;
-  width: 100%;
-  text-align: center;
-  z-index: 2;
-}
-
-.scrolling-text {
-  font-size: 100px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  color: white;
+  font-size: 2rem;
   font-weight: bold;
+  animation: fadeOut 2s forwards;
+}
+
+.loading-text {
+  animation: textScroll 2s linear infinite;
+}
+
+/* Content hidden during loading */
+.home.hidden {
+  display: none;
+}
+
+/* Black Background for Home Page */
+body, .home {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  color: white; /* Ensures text is visible */
+}
+
+/* Navbar Adjustments */
+.navbar-nav {
+  margin-left: auto; /* Align links to the right */
+  display: flex;
+  gap: 1.5rem; /* Spacing between links */
+}
+
+.navbar-nav .nav-link {
+  font-size: 1rem;
   color: white;
   text-transform: uppercase;
-  white-space: nowrap;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: scrollText 6s linear infinite;
 }
 
-/* Location button under the logo */
-.location-row {
-  position: absolute;
-  top: 150px;
-  left: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 50%;
-  padding-left: 20px;
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
 }
 
-.location-button {
-  background-color: lightgrey;
-  padding: 30px 50px;
-  border-radius: 50%;
-  color: white !important;
-  display: flex;
-  align-items: center;
+.navbar-brand {
+  font-size: 1.5rem;
+  color: white;
   font-weight: bold;
-  font-size: 2.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.5);
-  transition: all 0.3s ease-in-out;
 }
 
-.location-button:hover {
-  transform: scale(1.05);
-}
-
-/* Services section */
+/* Services Section Styling */
 .services {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 50%;
-  right: 5%;
-  transform: translateY(-50%);
-  flex-wrap: wrap; /* Ensure that the content wraps to avoid overlap */
+  margin: 50px 0;
+  gap: 2rem; /* Spacing between service items */
+  flex-wrap: wrap;
 }
 
-.direction {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.services .service-item {
+  text-align: center;
   color: white;
 }
 
-.service-text {
-  margin: 5px 0;
-  font-weight: bold;
-}
-
-.arrow {
-  margin-bottom: 10px;
-}
-
-/* Fred Warui Title Section at Bottom */
-.name-section {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  text-align: center;
-  z-index: 10;
-}
-
-.main-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: #fff;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.tagline {
+.service-item h3 {
+  margin: 10px 0;
   font-size: 1.5rem;
-  font-weight: 500;
-  color: #ddd;
-  text-transform: uppercase;
-  margin-top: 5px;
 }
 
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
+.service-item p {
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-/* Media Queries for Mobile and Tablet */
-@media (max-width: 768px) {
-  /* Ensure navbar is visible on mobile */
-  .navbar {
-    display: block;
-    width: 100%;
-    padding: 10px;
+/* Animations */
+@keyframes textScroll {
+  0% {
+    transform: translateX(-100%);
   }
+  100% {
+    transform: translateX(100%);
+  }
+}
 
-  /* Adjust image size for smaller screens */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Adjust image for small screens */
   .portfolio-image {
     width: 100%;
     height: auto;
-    top: 0; /* Keep it positioned at the top */
-    transform: translateX(0); /* Remove centering on small screens */
   }
 
-  /* Make the location button a smaller circle and center it */
   .location-row {
-    position: absolute;
-    top: 120px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 0;
+    top: 100px;
   }
 
-  .location-button {
-    font-size: 1.5rem;
-    padding: 20px 30px;
-  }
-
-  /* Make services section stack horizontally and avoid overlap on small screens */
   .services {
-    flex-direction: row;
-    justify-content: space-around;
-    position: static;
-    margin-top: 30px;
-    text-align: center;
-  }
-
-  .direction {
+    margin-top: 20px;
+    flex-direction: column;
     align-items: center;
-    margin-top: 10px;
   }
 
-  .service-text {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-
-  /* Resize name section */
   .main-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .tagline {
     font-size: 1.2rem;
-  }
-
-  /* Ensure the scrolling text is still visible */
-  .scrolling-text {
-    font-size: 40px; /* Smaller font size for mobile screens */
-  }
-}
-
-/* Tablet - 768px to 1024px */
-@media (min-width: 768px) and (max-width: 1024px) {
-  /* Adjust navbar for tablet */
-  .navbar {
-    display: block;
-    width: 100%;
-    padding: 15px;
-  }
-
-  /* Adjust image for tablet */
-  .portfolio-image {
-    width: 80%;
-    height: auto;
-    top: 10%;
-  }
-
-  /* Adjust location button for tablet */
-  .location-row {
-    top: 130px;
-  }
-
-  .location-button {
-    font-size: 2rem;
-    padding: 25px 40px;
-  }
-
-  /* Adjust services for tablet */
-  .services {
-    flex-direction: column;
-    top: auto;
-    right: auto;
-    transform: none;
-    position: static;
-    margin-top: 40px;
-  }
-
-  .direction {
-    align-items: center;
-  }
-
-  .service-text {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
   }
 }

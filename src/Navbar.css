@@ -1,115 +1,83 @@
-/* Navbar container - ensure full-width and fixed at the top */
-.navbar-container {
-  display: flex;
-  justify-content: space-between; /* Ensures the logo is on the left and links on the right */
-  padding: 0.5rem 2rem; /* Padding for spacing */
-  position: fixed; /* Fix the navbar to the top */
+/* Loading Screen */
+.loading-screen {
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 1000; /* Ensure navbar stays above all other content */
-  background-color: rgba(0, 0, 0, 0.7); /* Optional: Add a semi-transparent background */
-}
-
-/* Logo styles */
-.logo {
-  font-size: 1.5rem;
-  color: white;
-  font-weight: bold;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
   display: flex;
   align-items: center;
-}
-
-/* Logo text styling */
-.logo-text {
-  margin-left: 5px;
-  font-size: 1.6rem;  /* Adjust size as needed */
-}
-
-/* Nav links styles */
-.nav-links {
-  display: flex;
-  justify-content: flex-end;  /* Align links to the right */
-  width: 100%;
-}
-
-/* Individual nav link styling */
-.navbar-nav .nav-link {
+  justify-content: center;
+  z-index: 9999;
   color: white;
-  padding: 10px 20px;  /* Adds space around each link */
-  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  animation: fadeOut 2s forwards;
 }
 
-/* Nav link hover styles */
-.navbar-nav .nav-link:hover {
-  color: #ccc;  /* Lighter color on hover */
+.loading-text {
+  animation: textScroll 2s linear infinite;
 }
 
-/* Ensure that homepage content is visible even when navbar is fixed */
-.homepage-content {
-  margin-top: 80px; /* Ensure content is not hidden under the fixed navbar */
-  padding: 20px;
+/* Content hidden during loading */
+.home.hidden {
+  display: none;
 }
 
-/* Adjust navbar layout for mobile (screen width <= 768px) */
+/* Navbar adjustments for small screens */
+.navbar-nav .nav-link {
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
 @media (max-width: 768px) {
-  /* Navbar container adjustments */
-  .navbar-container {
+  /* Adjust image for small screens */
+  .portfolio-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .location-row {
+    top: 100px;
+  }
+
+  .services {
+    margin-top: 20px;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
   }
 
-  /* Hide nav links initially on small screens */
-  .nav-links {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  /* Show nav links when hamburger menu is active */
-  .nav-links.show {
-    display: flex;
-  }
-
-  /* Navbar link adjustments */
-  .navbar-nav .nav-link {
-    padding: 10px;
-    font-size: 1.2rem;
-  }
-
-  /* Hamburger button visibility */
-  .hamburger {
-    display: block;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    color: white;
+  .main-title {
     font-size: 2rem;
   }
 
-  .hamburger div {
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    margin: 5px;
-    transition: all 0.3s ease;
+  .tagline {
+    font-size: 1.2rem;
   }
+}
 
-  /* Toggle hamburger to 'X' on click */
-  .hamburger.active div:nth-child(1) {
-    transform: rotate(45deg);
-    transform-origin: 5px 5px;
+/* Animations */
+@keyframes textScroll {
+  0% {
+    transform: translateX(-100%);
   }
+  100% {
+    transform: translateX(100%);
+  }
+}
 
-  .hamburger.active div:nth-child(2) {
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
     opacity: 0;
-  }
-
-  .hamburger.active div:nth-child(3) {
-    transform: rotate(-45deg);
-    transform-origin: 5px 95%;
+    visibility: hidden;
   }
 }

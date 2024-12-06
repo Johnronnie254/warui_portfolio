@@ -1,20 +1,41 @@
-import React from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
-import { FaArrowCircleRight, FaGlobe } from 'react-icons/fa';
-import './Home.css';
+import React, { useState } from "react";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import { FaArrowCircleRight, FaGlobe } from "react-icons/fa";
+import "./Home.css";
 import CustomNavbar from "./Navbar";
-
+import AboutUs from "./Aboutus";
+import Work from "./Work";
+import Contact from "./Contact";
 
 const Home = () => {
+  const [loading, setLoading] = useState(false);
+  const [loadingText, setLoadingText] = useState("");
+
+  const handleLinkClick = (section) => {
+    setLoading(true);
+    setLoadingText(section);
+    setTimeout(() => {
+      setLoading(false);
+      document.getElementById(section).scrollIntoView({ behavior: "smooth" });
+    }, 2000);
+  };
+
   return (
     <div className="home-page">
-      {/* Entire Home Page Content */}
-      <div className="home">
-        <Container fluid>
-          {/* Navbar Section */}
-          <CustomNavbar />
+      {/* Loading Screen */}
+      {loading && (
+        <div className="loading-screen">
+          <div className="loading-text">{loadingText}</div>
+        </div>
+      )}
 
-          {/* Location button under the logo, 250px down */}
+      {/* Content */}
+      <div className={`home ${loading ? "hidden" : ""}`}>
+        <Container fluid>
+          {/* Navbar */}
+          <CustomNavbar onLinkClick={handleLinkClick} />
+
+          {/* Location Button */}
           <Row className="location-row">
             <Col className="d-flex justify-content-center">
               <Button className="location-button" variant="lightgrey">
@@ -35,22 +56,16 @@ const Home = () => {
             </Col>
           </Row>
 
-          {/* Large Fred Warui with Tagline at Bottom */}
-<Row className="name-section">
-  <Col className="d-flex flex-column align-items-center">
-    <h1 className="main-title">FRED WARUI</h1>
-    <h3 className="tagline">PASSIONATE STORYTELLER</h3>
-  </Col>
-</Row>
+          {/* Name and Tagline */}
+          <Row className="name-section">
+            <Col className="d-flex flex-column align-items-center">
+              <h1 className="main-title">FRED WARUI</h1>
+              <h3 className="tagline">PASSIONATE STORYTELLER</h3>
+            </Col>
+          </Row>
 
-
-         
-         
-
-
-          {/* Services and Location Button */}
+          {/* Services */}
           <Row className="services">
-            {/* Services on the right */}
             <Col className="direction">
               <div className="arrow">
                 <FaArrowCircleRight size={30} />
@@ -62,9 +77,20 @@ const Home = () => {
             </Col>
           </Row>
         </Container>
-      </div>
 
-      
+        {/* Other Sections */}
+        <div id="about">
+          <AboutUs />
+        </div>
+
+        <div id="work">
+          <Work />
+        </div>
+
+        <div id="contact">
+          <Contact />
+        </div>
+      </div>
     </div>
   );
 };
