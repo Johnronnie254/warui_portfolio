@@ -1,0 +1,266 @@
+.aboutus-container {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Header Section */
+.header-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.rotating-line {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.rotating-line::before {
+  content: "";
+  width: 80%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+}
+
+.rotating-circle {
+  width: 100px;
+  height: 100px;
+  border: 3px solid blue;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotate 3s linear infinite;
+  background-color: blue;
+}
+
+.rotating-circle p {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Image and Text Section */
+.text-placeholder {
+  display: flex;
+  justify-content: flex-start;  /* Ensures text starts from the left */
+  align-items: flex-start;  /* Aligns content to the top */
+  background-color: white !important;
+  color: black !important;
+  height: 60vh;  /* Adjust the height as needed */
+  width: 60%;  /* Makes the card 80% of the container width */
+  padding: 20px;  /* Padding around the content */
+  margin-left: auto;  /* Auto margin for left, to center the element */
+  margin-right: auto;  /* Auto margin for right, to center the element */
+  box-sizing: border-box;
+  border-radius: 20px;  /* Rounded corners */
+  border: 2px solid #ddd;  /* Optional: Adds a light border for contrast */
+}
+
+
+
+
+.text-placeholder h2, .text-placeholder p {
+  margin: 0;
+  padding: 0;
+  text-align: left;  /* Ensures text alignment is left by default */
+}
+
+.text-placeholder .highlight-text {
+  color: blue;  /* Blue color for the "About Fredrick Warui" text */
+  font-weight: bold;  /* Makes the text bold */
+  text-align: center;  /* Centers the text */
+}
+
+.text-placeholder p {
+  margin-bottom: 15px;
+  line-height: 1.5;  /* Adjusts line spacing for readability */
+}
+
+.image-text-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between the image and text sections */
+}
+
+.image-text-section .image-placeholder {
+  background-color: black!important;
+  height: 60vh;  /* Increased height to more than half of the screen */
+  width: 100%;
+  object-fit: cover; /* Ensure the image scales properly */
+}
+
+.image-text-section .text-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+  color: white;
+  height: 60vh;  /* Increased height to more than half of the screen */
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box; /* Prevent content overflow */
+}
+
+/* Dynamic Text Section */
+.highlight-text {
+  color: blue;  /* Makes the text blue */
+  font-weight: bold;  /* Makes the text bold */
+  text-align: center;  /* Centers the text */
+}
+
+.dynamic-text .dots {
+  animation: blink 1s steps(1, end) infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Services Section */
+
+.service-card {
+  transition: transform 0.3s ease;
+  position: relative;
+  background-color: #222;
+  color: white;
+  border: none;
+  height: 150px; /* Smaller height for service cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px; /* Space between cards */
+ border-radius: 100px; 
+}
+
+/* Style for the service title in the default state */
+.service-card .service-title {
+  font-weight: bold;  /* Make the title bold */
+  text-decoration: underline;  /* Underline the title */
+  color: blue;  /* Change the color to blue */
+  transition: none;  /* Disable transition (not needed for static state) */
+}
+
+
+
+/* Service Description - Not Bold, Slightly Spaced Below Title */
+.service-card .service-description {
+  font-weight: normal; /* Ensure description is not bold */
+  margin-top: 10px; /* Slight space between title and description */
+  color: white;
+}
+
+.service-card:hover .hover-card {
+  display: block;
+  background-color: blue;
+  color: white;
+  z-index: 10;
+  top: 20%; /* Adjust to make the blue card appear above the service card */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.hover-card {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  padding: 15px;
+  display: none;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Get in Touch Section */
+.rotating-get-in-touch {
+  width: 120px;
+  height: 120px;
+  background-color: blue;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotate 3s linear infinite;
+  margin: 20px auto;
+}
+
+.contact-buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+/* Social Links Section */
+.social-links {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.social-links a {
+  color: white;
+  margin-left: 15px;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.about-card {
+  background-color: #222;
+  color: white;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: none;
+  height: 100%;
+}
+
+.about-text-cards {
+  display: flex;
+  gap: 20px; /* Space between the cards */
+}
+
+.about-card .card-text {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .service-card {
+    height: auto; /* Allow flexible height for smaller screens */
+  }
+
+  .image-text-section .image-placeholder,
+  .image-text-section .text-placeholder {
+    height: 50vh; /* Adjust height for smaller screens */
+  }
+}

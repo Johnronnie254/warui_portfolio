@@ -1,0 +1,69 @@
+.contact-container {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding-top: 50px; /* Adds space from the top */
+}
+
+.welcome-text {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.image-container {
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+
+.location-text {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.contact-info .email, .contact-info .phone {
+  margin-bottom: 10px;
+}
+
+.contact-link {
+  color: white;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.social-media {
+  margin-bottom: 30px;
+}
+
+.social-icon {
+  font-size: 2rem;
+  margin: 0 15px;
+  color: white;
+}
+
+.social-icon:hover {
+  color: #ddd;
+}
+
+.copyright {
+  font-size: 1rem;
+  color: #888;
+}

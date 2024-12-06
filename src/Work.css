@@ -1,0 +1,94 @@
+/* Overall container styling */
+.work-container {
+  background-color: black;
+  color: white;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.work-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  text-decoration: underline;
+  color: white;
+}
+
+/* Cards container */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+  gap: 40px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Card styling */
+.work-card {
+  position: relative;
+  background-color: blue;
+  color: white;
+  height: 350px; /* Larger card size */
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.work-card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card */
+  cursor: pointer;
+}
+
+/* Content revealed on hover */
+.work-card .card-hover-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  color: black;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.work-card:hover .card-hover-content {
+  opacity: 1; /* Reveal content on hover */
+}
+
+/* Default title view */
+.work-card .card-default {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Card title */
+.card-title {
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+/* Placeholder video styling */
+.card-video {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+/* Card description styling */
+.card-description {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  line-height: 1.4;
+}

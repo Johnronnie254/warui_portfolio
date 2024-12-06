@@ -1,0 +1,164 @@
+/* Home page background */
+.home {
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+  padding-top: 15px;
+}
+
+/* Image styling */
+.portfolio-image {
+  width: 300px;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Scrolling text at the bottom */
+.scrolling-text-container {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+
+.scrolling-text {
+  font-size: 100px; /* Increased font size */
+  font-weight: bold;
+  color: white; /* White text color */
+  text-transform: uppercase;
+  white-space: nowrap;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scrollText 6s linear infinite; /* Slower and controlled movement */
+}
+
+/* Location button under the logo */
+.location-row {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50%;
+  padding-left: 20px;
+}
+
+.location-button {
+  background-color: lightgrey; /* Light grey background */
+  padding: 30px 50px; /* Increased padding for larger button */
+  border-radius: 50%; /* Circular button */
+  color: white !important; /* White text color */
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 2.5rem; /* Increased font size */
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.5); /* Blue shadow */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover */
+}
+
+.location-button:hover {
+  transform: scale(1.05);
+}
+
+/* Add globe rotation animation */
+.location-button .ml-2 {
+  animation: rotateGlobe 4s linear infinite;
+}
+
+/* Scrolling text animation */
+@keyframes scrollText {
+  0% {
+    left: 100%; /* Start from the right side */
+    opacity: 1;
+  }
+  50% {
+    left: 50%; /* Move to the center */
+    opacity: 1;
+  }
+  100% {
+    left: -100%; /* Move to the left side */
+    opacity: 0;
+  }
+}
+
+/* Location globe animation */
+@keyframes rotateGlobe {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Services section */
+.services {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+
+.direction {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+}
+
+.service-text {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.arrow {
+  margin-bottom: 10px;
+}
+
+/* Fred Warui Title Section at Bottom */
+.name-section {
+  position: absolute; /* Positioning at the bottom */
+  bottom: 20px; /* 20px margin from the bottom */
+  width: 100%; /* Full width to center content */
+  text-align: center; /* Center-align text */
+  z-index: 10; /* Ensure it stays above the image */
+}
+
+.main-title {
+  font-size: 3.5rem; /* Large size for Fred Warui */
+  font-weight: 700; /* Bold */
+  color: #fff; /* White text for visibility */
+  text-transform: uppercase;
+  margin: 0; /* Remove default margin */
+}
+
+.tagline {
+  font-size: 1.5rem; /* Smaller size for tagline */
+  font-weight: 500;
+  color: #ddd; /* Light gray for contrast */
+  text-transform: uppercase;
+  margin-top: 5px; /* Small gap between title and tagline */
+}
+
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
