@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between; /* Ensures the logo is on the left and links on the right */
   padding: 0.5rem 2rem; /* Padding for spacing */
+  align-items: center;
 }
 
 /* Logo styles */
@@ -32,6 +33,75 @@
   padding: 10px 20px;  /* Adds space around each link */
 }
 
+/* Nav link hover styles */
 .navbar-nav .nav-link:hover {
   color: #ccc;  /* Lighter color on hover */
+}
+
+/* Responsive adjustments for smaller screens (mobile) */
+@media (max-width: 768px) {
+  /* Navbar container adjustments */
+  .navbar-container {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center;  /* Center items horizontally */
+    padding: 1rem; /* Add more padding for better spacing */
+  }
+
+  /* Adjust logo size on mobile */
+  .logo {
+    font-size: 1.2rem; /* Smaller font size */
+  }
+
+  /* Hide nav links initially on small screens */
+  .nav-links {
+    display: none; /* Hide links by default */
+    width: 100%;
+    flex-direction: column; /* Stack links vertically when shown */
+    text-align: center;  /* Center align links */
+    margin-top: 10px;
+  }
+
+  /* Show nav links when hamburger menu is active */
+  .nav-links.show {
+    display: flex; /* Show links when toggled */
+  }
+
+  /* Style for nav links */
+  .navbar-nav .nav-link {
+    padding: 10px; /* Reduced padding for mobile */
+    font-size: 1.2rem;  /* Adjust font size */
+  }
+
+  /* Hamburger menu button */
+  .hamburger {
+    display: block; /* Show hamburger menu on small screens */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 2rem;
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+
+  /* Navbar toggle functionality when clicked */
+  .hamburger.active div:nth-child(1) {
+    transform: rotate(45deg);
+    transform-origin: 5px 5px;
+  }
+
+  .hamburger.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg);
+    transform-origin: 5px 95%;
+  }
 }
