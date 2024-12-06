@@ -17,9 +17,9 @@
   width: 100%;
   height: 60vh; /* Adjusted for responsive size */
   object-fit: cover;
-  position: relative; /* Changed to relative */
+  position: relative;
   top: 0;
-  z-index: -1; /* Send it behind the text */
+  z-index: -1;
 }
 
 /* Scrolling text at the bottom */
@@ -80,24 +80,39 @@
   align-items: center;
   flex-direction: column;
   position: relative;
-  margin-top: 50px; /* Space above the services */
+  margin-top: 100px; /* Space above the services */
 }
 
 .direction {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap; /* Allow the service cards to wrap */
+  justify-content: center;
   color: white;
 }
 
+.service-card {
+  width: 200px;
+  margin: 10px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
 .service-text {
-  margin: 5px 0;
   font-weight: bold;
-  font-size: 1.5rem; /* Adjusted for responsiveness */
+  font-size: 1.5rem;
 }
 
 .arrow {
-  margin-bottom: 10px;
+  margin-top: 5px;
+  font-size: 2rem;
 }
 
 /* Fred Warui Title Section at Bottom */
@@ -149,14 +164,20 @@ html {
     font-size: 40px; /* Reduced font size for readability */
   }
 
-  /* Make services section stack vertically on mobile */
+  /* Services Section: Stacking on mobile and no overlap */
   .services {
-    margin-top: 20px;
-    text-align: center;
+    margin-top: 120px; /* Added space to avoid overlap with name section */
   }
 
   .direction {
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+  }
+
+  .service-card {
+    width: 90%; /* Full width for small screens */
+    margin: 10px 0;
   }
 
   .service-text {
@@ -190,6 +211,10 @@ html {
   .services {
     flex-direction: column;
     margin-top: 30px;
+  }
+
+  .service-card {
+    width: 200px; /* Fixed width for tablet */
   }
 
   .service-text {
