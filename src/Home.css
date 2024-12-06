@@ -83,6 +83,7 @@
   top: 50%;
   right: 5%;
   transform: translateY(-50%);
+  flex-wrap: wrap; /* Ensure that the content wraps to avoid overlap */
 }
 
 .direction {
@@ -165,12 +166,10 @@ html {
     padding: 20px 30px;
   }
 
-  /* Make services section stack vertically on small screens */
+  /* Make services section stack horizontally and avoid overlap on small screens */
   .services {
-    flex-direction: column;
-    top: auto;
-    right: auto;
-    transform: none;
+    flex-direction: row;
+    justify-content: space-around;
     position: static;
     margin-top: 30px;
     text-align: center;
