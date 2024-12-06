@@ -1,5 +1,6 @@
 import React from "react";
 import "./Work.css";
+import CustomNavbar from './Navbar'
 
 const Work = () => {
   // Full card data array
@@ -44,6 +45,8 @@ const Work = () => {
 
   return (
     <div className="work-container">
+       {/* Navbar Section */}
+      <CustomNavbar />
       <h2 className="work-title">Projects</h2>
       <div className="card-container">
         {cardData.map((card, index) => (

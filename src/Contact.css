@@ -1,3 +1,4 @@
+/* Contact container styling */
 .contact-container {
   background-color: black;
   color: white;
@@ -66,4 +67,79 @@
 .copyright {
   font-size: 1rem;
   color: #888;
+}
+
+/* Responsive styles for mobile and tablet */
+@media (max-width: 768px) {
+  .welcome-text {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+  }
+
+  .profile-image {
+    width: 150px; /* Reduce image size */
+    height: 150px;
+  }
+
+  .location-text {
+    font-size: 1.3rem; /* Adjust font size */
+  }
+
+  .contact-info {
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  .contact-info .email, .contact-info .phone {
+    font-size: 1rem; /* Adjust font size */
+    margin-bottom: 8px; /* Adjust margin */
+  }
+
+  .contact-link {
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  .social-icon {
+    font-size: 1.5rem; /* Adjust icon size */
+    margin: 0 10px; /* Adjust spacing */
+  }
+
+  .social-media {
+    margin-bottom: 20px; /* Adjust spacing */
+  }
+
+  .copyright {
+    font-size: 0.9rem; /* Adjust font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-text {
+    font-size: 1.8rem; /* Further reduce font size for small screens */
+    margin-bottom: 20px;
+  }
+
+  .profile-image {
+    width: 120px; /* Further reduce image size */
+    height: 120px;
+  }
+
+  .location-text {
+    font-size: 1.1rem; /* Further adjust font size */
+  }
+
+  .contact-info {
+    font-size: 0.9rem; /* Further adjust font size */
+  }
+
+  .contact-info .email, .contact-info .phone {
+    font-size: 0.9rem; /* Further adjust font size */
+  }
+
+  .social-icon {
+    font-size: 1.2rem; /* Further reduce icon size */
+    margin: 0 8px; /* Adjust margin */
+  }
+
+  .copyright {
+    font-size: 0.8rem; /* Adjust font size */
+  }
 }

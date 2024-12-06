@@ -12,7 +12,7 @@ const CustomNavbar = () => {
       <Navbar.Toggle aria-controls="navbar-nav" />
       <Navbar.Collapse id="navbar-nav">
         <Nav className="ml-auto nav-links">
-          <Nav.Link href="#work">Work</Nav.Link>
+          <Nav.Link as={Link} to="/work">Work</Nav.Link>
           <Nav.Link as={Link} to="/about">About</Nav.Link>
           <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
         </Nav>

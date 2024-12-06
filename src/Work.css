@@ -17,7 +17,7 @@
 /* Cards container */
 .card-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row for larger screens */
   gap: 40px;
   margin: 0 auto;
   max-width: 1200px;
@@ -91,4 +91,36 @@
   font-size: 1.1rem;
   margin-top: 10px;
   line-height: 1.4;
+}
+
+/* Responsive styles for mobile and tablet */
+@media (max-width: 768px) {
+  /* Display 1 card per row on mobile/tablet */
+  .card-container {
+    grid-template-columns: repeat(1, 1fr); /* One card per row */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Reduce card height for smaller screens */
+  .work-card {
+    height: 300px;
+  }
+
+  /* Adjust font sizes for small screens */
+  .work-title {
+    font-size: 2rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .card-video {
+    font-size: 2rem;
+  }
+
+  .card-description {
+    font-size: 1rem;
+  }
 }

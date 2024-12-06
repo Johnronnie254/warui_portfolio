@@ -3,7 +3,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FaArrowCircleRight, FaGlobe } from 'react-icons/fa';
 import './Home.css';
 import CustomNavbar from "./Navbar";
-import Work from './Work';
+
 
 const Home = () => {
   return (
@@ -64,10 +64,7 @@ const Home = () => {
         </Container>
       </div>
 
-      {/* Work Component */}
-      <div className="work-section" id="work">
-        <Work />
-      </div>
+      
     </div>
   );
 };

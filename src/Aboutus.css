@@ -49,51 +49,48 @@
 /* Image and Text Section */
 .text-placeholder {
   display: flex;
-  justify-content: flex-start;  /* Ensures text starts from the left */
-  align-items: flex-start;  /* Aligns content to the top */
+  justify-content: flex-start;  
+  align-items: flex-start;  
   background-color: white !important;
   color: black !important;
-  height: 60vh;  /* Adjust the height as needed */
-  width: 60%;  /* Makes the card 80% of the container width */
-  padding: 20px;  /* Padding around the content */
-  margin-left: auto;  /* Auto margin for left, to center the element */
-  margin-right: auto;  /* Auto margin for right, to center the element */
+  height: 60vh;  
+  width: 60%;  
+  padding: 20px;
+  margin-left: auto;  
+  margin-right: auto;  
   box-sizing: border-box;
-  border-radius: 20px;  /* Rounded corners */
-  border: 2px solid #ddd;  /* Optional: Adds a light border for contrast */
+  border-radius: 20px;  
+  border: 2px solid #ddd;  
 }
-
-
-
 
 .text-placeholder h2, .text-placeholder p {
   margin: 0;
   padding: 0;
-  text-align: left;  /* Ensures text alignment is left by default */
+  text-align: left;  
 }
 
 .text-placeholder .highlight-text {
-  color: blue;  /* Blue color for the "About Fredrick Warui" text */
-  font-weight: bold;  /* Makes the text bold */
-  text-align: center;  /* Centers the text */
+  color: blue;
+  font-weight: bold;
+  text-align: center;
 }
 
 .text-placeholder p {
   margin-bottom: 15px;
-  line-height: 1.5;  /* Adjusts line spacing for readability */
+  line-height: 1.5;  
 }
 
 .image-text-section {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Space between the image and text sections */
+  gap: 20px;
 }
 
 .image-text-section .image-placeholder {
   background-color: black!important;
-  height: 60vh;  /* Increased height to more than half of the screen */
+  height: 60vh;  
   width: 100%;
-  object-fit: cover; /* Ensure the image scales properly */
+  object-fit: cover; 
 }
 
 .image-text-section .text-placeholder {
@@ -102,18 +99,18 @@
   align-items: center;
   background-color: #222;
   color: white;
-  height: 60vh;  /* Increased height to more than half of the screen */
+  height: 60vh;  
   width: 100%;
   text-align: center;
   padding: 20px;
-  box-sizing: border-box; /* Prevent content overflow */
+  box-sizing: border-box; 
 }
 
 /* Dynamic Text Section */
 .highlight-text {
-  color: blue;  /* Makes the text blue */
-  font-weight: bold;  /* Makes the text bold */
-  text-align: center;  /* Centers the text */
+  color: blue;
+  font-weight: bold;
+  text-align: center;
 }
 
 .dynamic-text .dots {
@@ -133,37 +130,32 @@
 }
 
 /* Services Section */
-
 .service-card {
   transition: transform 0.3s ease;
   position: relative;
   background-color: #222;
   color: white;
   border: none;
-  height: 150px; /* Smaller height for service cards */
+  height: 150px; 
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content vertically */
+  justify-content: center; 
   padding: 20px;
   box-sizing: border-box;
-  margin-bottom: 20px; /* Space between cards */
- border-radius: 100px; 
+  margin-bottom: 20px; 
+  border-radius: 100px; 
 }
 
-/* Style for the service title in the default state */
 .service-card .service-title {
-  font-weight: bold;  /* Make the title bold */
-  text-decoration: underline;  /* Underline the title */
-  color: blue;  /* Change the color to blue */
-  transition: none;  /* Disable transition (not needed for static state) */
+  font-weight: bold;  
+  text-decoration: underline;  
+  color: blue;  
+  transition: none;  
 }
 
-
-
-/* Service Description - Not Bold, Slightly Spaced Below Title */
 .service-card .service-description {
-  font-weight: normal; /* Ensure description is not bold */
-  margin-top: 10px; /* Slight space between title and description */
+  font-weight: normal; 
+  margin-top: 10px; 
   color: white;
 }
 
@@ -172,7 +164,7 @@
   background-color: blue;
   color: white;
   z-index: 10;
-  top: 20%; /* Adjust to make the blue card appear above the service card */
+  top: 20%;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -233,6 +225,7 @@
     transform: rotate(360deg);
   }
 }
+
 .about-card {
   background-color: #222;
   color: white;
@@ -244,7 +237,7 @@
 
 .about-text-cards {
   display: flex;
-  gap: 20px; /* Space between the cards */
+  gap: 20px; 
 }
 
 .about-card .card-text {
@@ -252,15 +245,68 @@
   line-height: 1.5;
 }
 
-
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .header-title {
+    font-size: 2rem;
+  }
+
+  .text-placeholder {
+    width: 80%;
+    padding: 10px;
+  }
+
   .service-card {
-    height: auto; /* Allow flexible height for smaller screens */
+    height: auto; 
   }
 
   .image-text-section .image-placeholder,
   .image-text-section .text-placeholder {
-    height: 50vh; /* Adjust height for smaller screens */
+    height: 50vh; 
+  }
+
+  .about-text-cards {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 1.5rem;
+  }
+
+  .text-placeholder {
+    width: 90%;
+    padding: 8px;
+  }
+
+  .image-text-section .image-placeholder,
+  .image-text-section .text-placeholder {
+    height: 40vh; 
+  }
+
+  .service-card {
+    height: auto; 
+  }
+
+  .about-text-cards {
+    flex-direction: column;
+  }
+
+  .service-card .service-title {
+    font-size: 1.2rem;
+  }
+
+  .service-card .service-description {
+    font-size: 1rem;
+  }
+
+  .social-links {
+    position: static;
+    margin-top: 20px;
+  }
+
+  .about-card .card-text {
+    font-size: 0.9rem;
   }
 }
