@@ -8,19 +8,18 @@
   justify-content: flex-start;
   position: relative;
   overflow: hidden;
-  padding-top: 15px;
+  padding-top: 20px;
+  z-index: 1;
 }
 
 /* Image styling */
 .portfolio-image {
-  width: 300px;
-  height: 100vh;
+  width: 100%;
+  height: 60vh; /* Adjusted for responsive size */
   object-fit: cover;
-  position: absolute;
+  position: relative; /* Changed to relative */
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
+  z-index: -1; /* Send it behind the text */
 }
 
 /* Scrolling text at the bottom */
@@ -48,13 +47,13 @@
 /* Location button under the logo */
 .location-row {
   position: absolute;
-  top: 150px;
-  left: 0;
+  top: 130px; /* Adjusted for better spacing */
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   height: 50%;
-  padding-left: 20px;
 }
 
 .location-button {
@@ -77,24 +76,24 @@
 /* Services section */
 .services {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 50%;
-  right: 5%;
-  transform: translateY(-50%);
+  flex-direction: column;
+  position: relative;
+  margin-top: 50px; /* Space above the services */
 }
 
 .direction {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   color: white;
 }
 
 .service-text {
   margin: 5px 0;
   font-weight: bold;
+  font-size: 1.5rem; /* Adjusted for responsiveness */
 }
 
 .arrow {
@@ -133,51 +132,31 @@ html {
 
 /* Media Queries for Mobile and Tablet */
 @media (max-width: 768px) {
-  /* Ensure navbar is visible on mobile */
+  /* Navbar for mobile */
   .navbar {
     display: block;
     width: 100%;
     padding: 10px;
   }
 
-  /* Adjust image size for smaller screens */
+  /* Adjust image size for mobile */
   .portfolio-image {
-    width: 100%;
-    height: auto;
-    top: 0; /* Keep it positioned at the top */
-    transform: translateX(0); /* Remove centering on small screens */
+    height: 50vh; /* Reduced for smaller screens */
   }
 
-  /* Make the location button a smaller circle and center it */
-  .location-row {
-    position: absolute;
-    top: 120px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 0;
+  /* Adjust scrolling text for small screens */
+  .scrolling-text {
+    font-size: 40px; /* Reduced font size for readability */
   }
 
-  .location-button {
-    font-size: 1.5rem;
-    padding: 20px 30px;
-  }
-
-  /* Make services section stack vertically on small screens */
+  /* Make services section stack vertically on mobile */
   .services {
-    flex-direction: column;
-    top: auto;
-    right: auto;
-    transform: none;
-    position: static;
-    margin-top: 30px;
+    margin-top: 20px;
+    text-align: center;
   }
 
   .direction {
     align-items: center;
-    margin-top: 10px;
   }
 
   .service-text {
@@ -185,7 +164,13 @@ html {
     margin-bottom: 10px;
   }
 
-  /* Resize name section */
+  /* Location button smaller for mobile */
+  .location-button {
+    font-size: 1.5rem;
+    padding: 20px 30px;
+  }
+
+  /* Name section adjustments */
   .main-title {
     font-size: 2.5rem;
   }
@@ -193,55 +178,26 @@ html {
   .tagline {
     font-size: 1.2rem;
   }
-
-  /* Ensure the scrolling text is still visible */
-  .scrolling-text {
-    font-size: 40px; /* Smaller font size for mobile screens */
-  }
 }
 
 /* Tablet - 768px to 1024px */
 @media (min-width: 768px) and (max-width: 1024px) {
-  /* Adjust navbar for tablet */
-  .navbar {
-    display: block;
-    width: 100%;
-    padding: 15px;
-  }
-
   /* Adjust image for tablet */
   .portfolio-image {
-    width: 80%;
-    height: auto;
-    top: 10%;
+    height: 60vh; /* Adjusted for tablet */
   }
 
-  /* Adjust location button for tablet */
-  .location-row {
-    top: 130px;
+  .services {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .service-text {
+    font-size: 1.3rem;
   }
 
   .location-button {
     font-size: 2rem;
     padding: 25px 40px;
-  }
-
-  /* Adjust services for tablet */
-  .services {
-    flex-direction: column;
-    top: auto;
-    right: auto;
-    transform: none;
-    position: static;
-    margin-top: 40px;
-  }
-
-  .direction {
-    align-items: center;
-  }
-
-  .service-text {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
   }
 }
