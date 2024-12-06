@@ -137,29 +137,29 @@
   background-color: #222;
   color: white;
   border: none;
-  height: 150px; 
+  height: 200px; /* Adjust height for smaller card */
+  width: 100%; /* Full width for mobile */
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  padding: 20px;
+  justify-content: center;
+  padding: 15px;
   box-sizing: border-box;
-  margin-bottom: 20px; 
-  border-radius: 10px; 
-  margin-right: 20px;
-  width: calc(50% - 10px); /* For medium screen size, two cards horizontally */
+  margin-bottom: 20px;
+  border-radius: 10px;
+  margin-right: 0; /* Remove right margin for stacked cards */
 }
 
 /* Ensure hover effect is still active */
 .service-card .service-title {
-  font-weight: bold;  
-  text-decoration: underline;  
-  color: blue;  
-  transition: none;  
+  font-weight: bold;
+  text-decoration: underline;
+  color: blue;
+  transition: none;
 }
 
 .service-card .service-description {
-  font-weight: normal; 
-  margin-top: 10px; 
+  font-weight: normal;
+  margin-top: 10px;
   color: white;
 }
 
@@ -253,8 +253,13 @@
 @media (max-width: 1024px) {
   /* Services */
   .service-card {
-    width: calc(50% - 10px); /* Two cards horizontally on medium screens */
-    margin-bottom: 20px; /* Add margin between them */
+    width: 45%; /* Two cards horizontally on medium screens */
+    margin-right: 10px;
+    margin-bottom: 20px;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px); /* Optional: Add hover effect */
   }
 
   /* About Us Section */
@@ -272,7 +277,8 @@
 @media (max-width: 768px) {
   /* Services */
   .service-card {
-    width: 100%; /* One card per line on small screens */
+    width: 100%; /* Full width for small screens */
+    margin-bottom: 15px; /* Adjust spacing between cards */
   }
 
   /* About Us Section */
