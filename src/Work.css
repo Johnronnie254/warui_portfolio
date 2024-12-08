@@ -1,6 +1,6 @@
 /* Overall container styling */
 .work-container {
-  background-color: black;
+  background-color: white;
   color: white;
   padding: 40px 20px;
   min-height: 100vh;
@@ -11,7 +11,7 @@
   margin-bottom: 30px;
   font-size: 2.5rem;
   text-decoration: underline;
-  color: white;
+  color: black;
 }
 
 /* Cards container */
@@ -26,8 +26,8 @@
 /* Card styling */
 .work-card {
   position: relative;
-  background-color: blue;
-  color: white;
+  background-color: darkgrey;
+  color: black;
   height: 350px; /* Larger card size */
   border-radius: 8px;
   overflow: hidden;

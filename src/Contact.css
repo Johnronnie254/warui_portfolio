@@ -1,9 +1,10 @@
 /* Contact container styling */
 .contact-container {
-  background-color: black;
+  background-color:  #2b2b2b;
   color: white;
   text-align: center;
-  padding-top: 50px; /* Adds space from the top */
+  padding-top: 50px;
+  height: 250px;/* Adds space from the top */
 }
 
 .welcome-text {
@@ -148,8 +149,8 @@
 .rotating-get-in-touch {
   width: 120px;
   height: 120px;
-  background-color: blue;
-  color: white;
+  background-color: white;
+  color: black;
   border-radius: 50%;
   display: flex;
   justify-content: center;

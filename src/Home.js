@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { FaArrowCircleRight, FaGlobe } from "react-icons/fa";
+import { FaGlobe } from "react-icons/fa";
 import "./Home.css";
 import CustomNavbar from "./Navbar";
 import AboutUs from "./Aboutus";
@@ -57,23 +57,10 @@ const Home = () => {
           </Row>
 
           {/* Name and Tagline */}
-          <Row className="name-section">
-            <Col className="d-flex flex-column align-items-center">
+          <Row className="name-section mt-5">
+            <Col className="d-flex flex-column align-items-center text-center">
               <h1 className="main-title">FRED WARUI</h1>
               <h3 className="tagline">PASSIONATE STORYTELLER</h3>
-            </Col>
-          </Row>
-
-          {/* Services */}
-          <Row className="services">
-            <Col className="direction">
-              <div className="arrow">
-                <FaArrowCircleRight size={30} />
-              </div>
-              <div className="service-text">Direction</div>
-              <div className="service-text">Cinematography</div>
-              <div className="service-text">Editing</div>
-              <div className="service-text">Focus Pooling</div>
             </Col>
           </Row>
         </Container>

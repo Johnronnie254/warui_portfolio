@@ -1,7 +1,6 @@
 import React from "react";
-import { Container, Row, Col, Card} from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import "./Aboutus.css";
-
 
 const AboutUs = () => {
   // Dynamic services array
@@ -54,7 +53,7 @@ const AboutUs = () => {
         </Col>
         <Col md={6} className="text-placeholder">
           <div style={{ maxWidth: "100%", padding: "20px" }}>
-             <h2 className="highlight-text">About Fredrick Warui</h2>
+            <h2 className="highlight-text">About Fredrick Warui</h2>
             <p>
               Fredrick Warui is a passionate filmmaker, experienced in the art
               of cinematography, directing, and focus pulling. With a deep love
@@ -99,21 +98,18 @@ const AboutUs = () => {
         {services.map((service, index) => (
           <Col md={3} key={index} className="mb-4">
             <Card className="service-card">
-  <Card.Body>
-    <Card.Title>{service.title}</Card.Title>
-    <Card.Text>{service.description}</Card.Text>
-  </Card.Body>
-  <div className="hover-card">
-    <h4 className="service-title">{service.title}</h4>
-    <p>{service.detailedDescription}</p>
-  </div>
-</Card>
-
+              <Card.Body>
+                <Card.Title>{service.title}</Card.Title>
+                <Card.Text>{service.description}</Card.Text>
+              </Card.Body>
+              <div className="hover-card">
+                <h4 className="service-title">{service.title}</h4>
+                <p>{service.detailedDescription}</p>
+              </div>
+            </Card>
           </Col>
         ))}
       </Row>
-
-      
 
       {/* Social Links Section */}
       <Row>
