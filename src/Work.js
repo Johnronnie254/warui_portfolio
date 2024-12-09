@@ -9,7 +9,7 @@ const Work = () => {
       title: "Jiji Showmax",
       video: "VIDEO",
       description:
-        "Create work.js now and I want a catchy title background black as usual and like 9 cards. These cards should be hoveable when a cursor is pointed. It should have a title, below title section for placing video clip and below it within the card a description of the work.",
+        "Had the incredible opportunity to work as the cinematographer and editor for this trailer. It’s been an amazing journey bringing this story to life alongside the incredibly talented directors @enosolik , @edwinkamau1 , @michael_m_jones , @njuekevin and @isayaevans Starring the amazing @nungarikiore as Achie, @fridah_mumbe as Julz, @aicystevens as Mwede, @sybilcolette as Vee, and @keithchuaga as Makali, this series is a must-watch!",
     },
     {
       title: "Pepeta Showmax",

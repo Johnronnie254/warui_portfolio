@@ -1,7 +1,7 @@
 /* Contact container styling */
 .contact-container {
   background-color:  #2b2b2b;
-  color: white;
+  color: darkgrey;
   text-align: center;
   padding-top: 50px;
   height: 250px;/* Adds space from the top */
@@ -39,7 +39,7 @@
 }
 
 .contact-link {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
@@ -58,7 +58,7 @@
 .social-icon {
   font-size: 2rem;
   margin: 0 15px;
-  color: white;
+  color: black;
 }
 
 .social-icon:hover {
@@ -67,7 +67,7 @@
 
 .copyright {
   font-size: 1rem;
-  color: #888;
+  color: black;
 }
 
 /* Responsive styles for mobile and tablet */

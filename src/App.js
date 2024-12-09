@@ -1,12 +1,13 @@
-
 import React from 'react';
-
 import Home from './Home';
-
+import CustomNavbar from './Navbar';
 
 function App() {
   return (
-    <Home />
+    <div>
+      <CustomNavbar />
+      <Home />
+    </div>
   );
 }
 

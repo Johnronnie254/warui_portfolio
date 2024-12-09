@@ -99,8 +99,8 @@
 .service-card {
   transition: transform 0.3s ease;
   position: relative;
-  background-color: #ccc; /* Light grey background */
-  color: white;
+  background-color: black; /* Light grey background */
+  color: black;
   border: 1px solid #ddd;
   height: 200px;
   display: flex;
